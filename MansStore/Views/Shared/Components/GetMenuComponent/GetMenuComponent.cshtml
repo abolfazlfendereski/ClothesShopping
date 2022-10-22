@@ -1,0 +1,40 @@
+﻿@model List<BissnessEntity.ProductUs.MenuItemDto>
+@{
+    Layout = null;
+}
+@foreach (var item in Model)
+{
+<li>
+    <a href="~/product/Showproduct?catId=@item.CatId">@item.Name<span class="submenu-indicator"></span> <span class="submenu-indicator"></span></a>
+    @if (item.Child.Count() > 0)
+    {
+<ul class="nav-dropdown nav-submenu">
+    @foreach (var item1 in item.Child)
+    {
+
+        <li>
+            <a href="#">
+                @item1.Name
+                <span class="submenu-indicator"></span>
+            </a>
+            <ul class="nav-dropdown nav-submenu">
+                @foreach (var item2 in item1.Child)
+                {
+
+                    <li><a href="~/product/Showproduct?catId=@item2.CatId">@item2.Name</a></li>
+
+
+                }
+            </ul>
+        </li>
+
+
+
+
+    }
+</ul>
+            }
+
+        </li>
+}
+

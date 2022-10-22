@@ -1,0 +1,25 @@
+﻿@model BissnessEntity.Cartdto
+
+@{
+    Layout = null;
+}
+
+<li><a href="javascript:void(0);" onclick="openRightMenu()">
+    <i class="ti-shopping-cart"></i>@if (Model != null)
+    {
+        <span class="cart_counter">
+            @Model.productCount
+        </span>
+
+    }
+    else
+    {
+        <span class="cart_counter">
+          0
+        </span>
+    }
+
+
+
+
+</a></li>

@@ -1,0 +1,428 @@
+﻿@model BissnessEntity.ProductUs.ProductUsDetail;
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var a="dada";
+    var b ="Color"+ 0;
+
+}
+@section Sheets{
+
+}
+<div id="main-wrapper">
+
+
+
+
+
+
+    <!-- =========================== Breadcrumbs =================================== -->
+    <div class="breadcrumbs_wrap">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="text-center">
+                        <h2 class="breadcrumbs_title">@Model.ProductDetail.NamePro</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+
+                                <li class="breadcrumb-item"><a href="#">@Model.Category</a></li>
+
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- =========================== Breadcrumbs =================================== -->
+    <!-- =========================== Product Detail =================================== -->
+    <section>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="sp-loading"><img src="~/images/product/@Model.ProductDetail.images.FirstOrDefault()" alt=""><br>بارگیری تصاویر</div>
+                    <div class="sp-wrap">
+                        @foreach (var item in Model.ProductDetail.images)
+                        {
+                            <a href="~/images/product/@item"><img src="~/images/product/@item" alt=""></a>
+
+                        }
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="woo_pr_detail">
+
+                        <div class="woo_cats_wrps">
+                            <a href="#" class="woo_pr_cats">@Model.Category</a>
+
+                        </div>
+                        <br />
+                        <h2 class="woo_pr_title">@Model.ProductDetail.NamePro</h2>
+                        <br />
+                        <br />
+                        <div class="woo_pr_reviews">
+                            <div class="woo_pr_rating">
+                                @for (int i = 0; i <= Model.ProductDetail.Star; i++)
+                                {
+                                    <i class="fa fa-star active"></i>
+                                }
+                                @for (int i = 0; i <= (5 - Model.ProductDetail.Star); i++)
+                                {
+                                    <i class="fa fa-star filled"></i>
+                                }
+
+
+                                <span class="woo_ave_rat">4.8</span>
+                            </div>
+                            <div class="woo_pr_total_reviews">
+                                <a href="#">(@Model.Comment.Count() نظرات)</a>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="woo_pr_price">
+                            <div class="woo_pr_offer_price">
+                                <h4>@Model.ProductDetail.Price.ToString("n0")تومان </h4>
+                            </div>
+                        </div>
+
+
+                        @if (Model.ProductDetail.Sizes.Count() > 0)
+                        {
+                            <div class="woo_pr_color flex_inline_center mb-3">
+                                <div class="woo_pr_varient">
+                                    <h6>سایز:</h6>
+                                </div>
+                                <div class="woo_colors_list pr-3">
+
+
+
+                                    @foreach (var item in Model.ProductDetail.Sizes)
+                                    {
+                                        a = a + 1;
+                                        <div class="custom-varient custom-size">
+                                            <input type="radio" class="custom-control-input" name="sizeRadio" id="Sizetxt" value="@item.Size" data-toggle="form-caption" data-target="#sizeCaption" hidden>
+                                            <input type="radio" class="custom-control-input" name="sizeRadio" id="@a" value="@item.Size" data-toggle="form-caption" data-target="#sizeCaption">
+                                            
+                                            <label class="custom-control-label" for="@a">@item.Size</label>
+                                        </div>                                                                              
+
+                                    }
+
+                                </div>
+                            </div>
+                        }
+                        @if (Model.ProductDetail.Colors.Count() > 0)
+                        {
+                            <div class="woo_pr_color flex_inline_center mb-3">
+                                <div class="woo_pr_varient">
+                                    <h6>رنگ:</h6>
+                                </div>
+                                <div class="woo_colors_list pr-3">
+
+
+
+                                    @foreach (var item in Model.ProductDetail.Colors)
+                                    {
+                                        b = b + 1;
+                                    <div class="custom-varient custom-size">
+                                       
+                                        <input type="radio" class="custom-control-input" name="ColorRadio" id="@b" value="@item.Color" data-toggle="form-caption" data-target="#sizeCaption">
+                                        <input type="radio" id="colorid" name="name" value="@item.Color" hidden/> 
+                                        <label class="custom-control-label" for="@b">@item.Color</label>
+                                        
+                                    </div>
+                                        
+                                    }
+                              
+                                    
+                                </div>
+                                </div>
+                            
+                        }
+                        <!-- Short Info -->
+                        <div class="pr_info_prefix mb-3">
+
+                            <!-- First -->
+                            <!-- First -->
+                            <div class="cart_sku_preflix">
+                                <div class="sku_preflix_first">
+                                    <strong>دسته بندی:</strong>
+                                </div>
+                                <div class="sku_preflix_last">
+                                    @Model.Category
+                                </div>
+                            </div>
+
+
+                            <!-- First -->
+                            <div class="cart_sku_preflix">
+                                <div class="sku_preflix_first">
+                                    <strong>اشتراک در:</strong>
+                                </div>
+                                <div class="sku_preflix_last">
+                                    <ul>
+                                        <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                        <li><a href="#"><i class="ti-twitter"></i></a></li>
+                                        <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="woo_btn_action">
+                            <div class="col-12 col-lg-auto p-0">
+                                <input type="number" id="CountPro" class="form-control qua_pr mb-2" value="1" />
+                            </div>
+                            <div class="col-12 col-lg-auto">
+                                <button onclick="AddCart(@Model.ProductDetail.id)" class="btn btn-block btn-dark mb-2">افزودن به سبد خرید <i class="ti-shopping-cart-full mr-2"></i></button>
+                            </div>
+                            <div class="col-12 col-lg-auto">
+                                <a href="/Product/AddFavorite?ProductId=@Model.ProductDetail.id" class="btn btn-gray btn-block mb-2" data-toggle="button">مورد علاقه <i class="ti-heart mr-2"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Product Description -->
+            <div class="row mt-5">
+                <div class="col-lg-12 col-md-12">
+                    <div class="custom-tab style-1">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true" aria-expanded="true">توضیحات</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="information-tab" data-toggle="tab" href="#information" role="tab" aria-controls="information" aria-selected="false" aria-expanded="false">اطلاعات تکمیلی</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false" aria-expanded="false">بررسی ها</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade active show" id="description" role="tabpanel" aria-labelledby="description-tab" aria-expanded="true">
+                                <p>@Model.ProductDetail.Descript</p>
+                            </div>
+                            <div class="tab-pane fade" id="information" role="tabpanel" aria-labelledby="information-tab" aria-expanded="false">
+                                <h4>ویژگی ها</h4>
+                                <br />
+                                <div class="product_meta">
+                                    @foreach (var item in Model.ProductDetail.Features)
+                                    {
+                                        <span class="sku_wrapper">@item.DisplayName: <span class="sku">@item.Value</span></span>
+
+                                    }
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab" aria-expanded="false">
+                                <div class="review-wrapper">
+                                    <div class="review-wrapper-header">
+                                        <h4>@Model.Comment.Count() نظرات</h4>
+                                    </div>
+                                    <div class="review-wrapper-body">
+                                        <ul class="review-list">
+                                            @foreach (var item in Model.Comment)
+                                            {
+                                                <li>
+                                                    <div class="reviews-box">
+                                                        <div class="review-body">
+
+                                                            <div class="review-content">
+                                                                <div class="review-info">
+                                                                    <div class="review-comment">
+                                                                        <div class="review-author">
+                                                                            @item.Name
+                                                                        </div>
+                                                                        <div class="review-comment-stars">
+                                                                            <i class="fa fa-star"></i>
+                                                                            <i class="fa fa-star"></i>
+                                                                            <i class="fa fa-star"></i>
+                                                                            <i class="fa fa-star"></i>
+                                                                            <i class="fa fa-star empty"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="review-comment-date">
+                                                                        <div class="review-date">
+                                                                            <span>@item.InsertTime</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <p>@item.TextComment</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                            }
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <div class="review-wrapper">
+                                        <form asp-action="AddComment" asp-controller="Product" method="get">
+                                            <div class="review-wrapper-header">
+                                                <h4>ارزیابی و نوشتن نظرات</h4>
+                                            </div>
+                                            <div class="review-wrapper-body">
+
+                                                <div class="row mb-3">
+                                                    <div class="col-md-12">
+                                                        <div class="rating-opt">
+                                                            <div class="jr-ratenode jr-nomal"></div>
+                                                            <div class="jr-ratenode jr-nomal "></div>
+                                                            <div class="jr-ratenode jr-nomal "></div>
+                                                            <div class="jr-ratenode jr-nomal "></div>
+                                                            <div class="jr-ratenode jr-nomal "></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+
+                                                    <div class="col-sm-12 form-group">
+                                                        <input type="text" id="TxtComment" name="txt" class="form-control height-110" placeholder="تجربه خود را برای ما بگویید..." />
+                                                    </div>
+                                                    <div class="col-sm-12 form-group" hidden>
+                                                        <input type="text" id="TxtComment" name="id" class="form-control height-110" placeholder="تجربه خود را برای ما بگویید..." value="@Model.ProductDetail.id" hidden />
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <button type="submit" class="btn btn-primary">ارسال نظرات</button>
+                                                    </div>
+
+                                                </div>
+
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="alert alert-warning">
+                                        برای ثبت نظر واردحساب خود شوید
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- =========================== Product Detail =================================== -->
+    <!-- =========================== Related Products =================================== -->
+    <section class="gray">
+        <div class="container">
+            @if (Model.ProductRelate != null)
+            {
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 mb-2">
+                        <h4 class="mb-0">محصولات مرتبط</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-12 col-md-12">
+                        <div class="owl-carousel products-slider owl-theme">
+
+                            <!-- Single Item -->
+
+                            @foreach (var Relate in Model.ProductRelate)
+                            {
+
+                                <div class="item">
+                                    <div class="woo_product_grid">
+
+                                        <div class="woo_product_thumb">
+                                            <img src="~/images/product/@Relate.ImageSrc" class="img-fluid" alt="" />
+                                        </div>
+                                        <div class="woo_product_caption center">
+                                            <div class="woo_rate">
+                                                @for (int i = 0; i <= Relate.star; i++)
+                                                {
+                                                    <i class="fa fa-star active"></i>
+                                                }
+                                                @for (int i = 0; i <= (5 - Relate.star); i++)
+                                                {
+                                                    <i class="fa fa-star filled"></i>
+                                                }
+                                            </div>
+                                            <div class="woo_title">
+                                                <h4 class="woo_pro_title"><a href="detail-1.html">@Relate.Title</a></h4>
+                                            </div>
+                                            <div class="woo_price">
+                                                <h6>@Relate.price.ToString("n0") تومان</h6>
+                                            </div>
+                                        </div>
+                                        <div class="woo_product_cart hover">
+                                            <ul>
+                                                <li><a href="~/product/Detail?id=@Relate.id" class="woo_cart_btn btn_cart"><i class="ti-eye"></i></a></li>
+                                                <li><a href="~/Cart/AddCart?id=@Relate.id" class="woo_cart_btn btn_view"><i class="ti-shopping-cart"></i></a></li>
+                                                <li><a href="/Product/AddFavorite?id=@Relate.id" class="woo_cart_btn btn_save"><i class="ti-heart"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            }
+            </div>
+    </section>
+    <!-- =========================== Related Products =================================== -->
+</div>
+
+
+@section Script{
+    <script>
+        function AddCart(id) {
+            alert("click");
+            var Color = $("#colorid").val();                  
+            alert(Color);
+            var Size = $("#Sizetxt").val();
+            alert(Size);
+            var Count = $("#CountPro").val();
+            alert(Count);
+            if (Size==undefined) {
+                Size = null;
+            }
+            if (Color == undefined) {
+                Color = null;
+            }
+
+            $.ajax({
+
+               url : '/Cart/AddCart',
+               type : 'GET',
+               data: { id: id, size: Size, Color: Color, Count: Count }
+
+            });
+
+        }
+
+    </script>
+   
+}

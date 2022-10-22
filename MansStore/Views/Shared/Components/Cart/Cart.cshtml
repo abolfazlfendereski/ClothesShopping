@@ -1,0 +1,70 @@
+﻿@model BissnessEntity.Cartdto
+@{
+    Layout = null;
+}
+<!-- cart -->
+<!-- Switcher Start -->
+<div class="w3-ch-sideBar w3-bar-block w3-card-2 w3-animate-right" style="display:none;left:0;" id="rightMenu">
+    <div class="rightMenu-scroll">
+        <h4 class="cart_heading">سبد خرید شما</h4>
+        <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large"><i class="ti-close"></i></button>
+        <div class="right-ch-sideBar" id="side-scroll">
+
+            <div class="cart_select_items">
+                <!-- Single Item -->
+                @if (Model != null)
+                {
+                    @foreach (var item in Model.CartItem)
+                    {
+
+                                                <div class="cart_selected_single">
+                            <div class="cart_selected_single_thumb">
+                                <a href="~/Cart"><img src="~/images/product/@item.Images" class="img-fluid" alt="" /></a>
+                            </div>
+                            <div class="cart_selected_single_caption">
+                                <h4 class="product_title">@item.Product</h4>
+                                <span class="numberof_item">@item.Price.ToString("n0") تومان</span>
+                                <a href="~/Cart/Remove?id=@item.id" class="text-danger">حذف</a>
+                            </div>
+                        </div>
+
+                    }
+                }
+                else
+                {
+                    <div class="cart_selected_single_caption">
+                        <p>سبد خالی است</p>
+                    </div>
+                }
+
+            </div>
+
+            
+                @if (Model == null)
+                {
+                    <div class="cart_subtotal">
+                        <h6>جمع کل<span class="theme-cl">0</span></h6>
+                    </div>
+                }
+                else
+                {
+
+                    <div class="cart_subtotal">
+                        <h6>جمع کل<span class="theme-cl">@Model.Sum.ToString("n0") تومان</span></h6>
+                    </div>
+                }
+
+
+          
+
+                    <div class="cart_action">
+                        <ul>
+                            <li><a href="~/Cart" class="btn btn-go-cart btn-theme">مشاهده / ویرایش سبد خرید</a></li>
+                            <li><a href="#" class="btn btn-checkout">اکنون پرداخت کنید</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+    </div>
+</div>
+<!-- cart -->

@@ -1,0 +1,333 @@
+﻿<!-- BEGIN: Head-->
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@section Sheets{
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google.">
+    <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
+    <meta name="author" content="ThemeSelect">
+    <title> فرم ثبت محصول </title>
+    <link rel="apple-touch-icon" href="~/app-assets/images/favicon/apple-touch-icon-152x152.png">
+    <link rel="shortcut icon" type="image/x-icon" href="~/app-assets/images/favicon/favicon-32x32.png">
+   
+    <!-- BEGIN: VENDOR CSS-->
+
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/flag-icon/css/flag-icon.min.css">
+    <!-- END: VENDOR CSS-->
+    <link href="~/app-assets/vendors/sweetalert/sweetalert.css" rel="stylesheet" />
+
+
+}
+
+<!-- END: Head-->
+<div class="col s12 m12 l12">
+    <div id="Form-advance" class="card card card-default scrollspy">
+        <div class="card-content">
+            <h4 class="card-title">ثبت محصول جدید</h4>
+            <form>
+                <div class="row">
+                    <div class="input-field col m6 s12">
+                        <input id="Name" type="text">
+                        <label class="contact-input" for="first_name01"> نام محصول</label>
+                    </div>
+                    <div class="input-field col m6 s12">
+                        <input id="Berand" type="text">
+                        <label class="contact-input" for="last_name">برند</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col m6 s12">
+                        <input id="Number" type="text">
+                        <label class="contact-input" for="first_name01">تعداد</label>
+                    </div>
+                    <div class="input-field col m6 s12">
+                        <input id="Price" type="text">
+                        <label class="contact-input" for="last_name">قیمت</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col m6 s12">
+                        <select  class="form-control" id="Category" asp-items="@ViewBag.Categories"> </select>
+
+                        <label>انتخاب دسته بندی</label>
+                    </div>
+                    <div class="col m6 s12 file-field input-field">
+                        <div class="btn float-right">
+                            <span>بارگذاری فایل</span>
+                            <input type="file" multiple id="proImage" accept="image/*">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="input-field col s12">
+                    <textarea id="Description" class="materialize-textarea"></textarea>
+                    <label class="contact-input" for="message">توضیحات</label>
+                </div>
+                <br />
+                <br />
+
+                <br />
+
+                <div class="row">
+
+                    <div class="col m3 s12 input-field">
+                        <input placeholder="آبی" id="ColorPro" type="text" class="validate contact-input">
+                        <label for="icon_prefix2">نام رنگ</label>
+                    </div>
+                    <div class="input-field col m4 s12">
+                        <div class="input-field col s12">
+                            <button class="btn  waves-effect waves-light" id="AddColor" type="button" name="action">
+                                افزودن
+                            </button>
+                        </div>
+                    </div>
+
+                    <table id="ColorTable" style="border: 1px; width: 200Px;height:100px; ">
+                        <thead>
+                            <tr>
+                                <th>
+                                    نام رنگ
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <br />
+                <br />
+                <div class="row">
+
+                    <div class="col m3 s12 input-field">
+                        <input placeholder="XL" id="sizepro" type="text" class="validate contact-input">
+                        <label for="icon_prefix2">سایز</label>
+                    </div>
+                    <div class="input-field col m4 s12">
+                        <div class="input-field col s12">
+                            <button class="btn  waves-effect waves-light" id="AddSize" type="button" name="action">
+                                افزودن
+                            </button>
+                        </div>
+                    </div>
+
+                    <table id="SizaTable" style="border: 1px; width: 200Px;height:100px; ">
+                        <thead>
+                            <tr>
+                                <th>
+                                    مقدار سایز
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <div class="row">
+
+                    <div class="col m3 s12 input-field">
+                        <input placeholder="سایز" id="DisableName" type="text" class="validate contact-input">
+                        <label for="">نام ویژگی</label>
+                    </div>
+
+                    <div class="col m3 s12 input-field">
+                        <input placeholder="Xl" id="ValName" type="text" class="validate contact-input">
+                        <label for="">مقدار ویژگی</label>
+                    </div>
+                    <div class="input-field col m4 s12">
+                        <div class="input-field col s12">
+                            <button id="AddFeatures" class="btn  waves-effect waves-light" type="button" >
+                                افزودن
+                            </button>
+                        </div>
+                    </div>
+
+                    <table id="FeaturesTable" style="border: 1px; width: 200Px;height:100px;padding-right:100px ">
+                        <thead>
+                            <tr>
+                                <th> نام ویژگی</th>
+                                <th>
+                                    مقدار ویژگی
+                                </th>
+                                <th>
+                                   عمل
+                                </th>
+                            </tr>
+
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button class="btn cyan waves-effect waves-light right" type="button" id="btnAddProduct" name="action">
+                            ثبت محصول
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- BEGIN VENDOR JS-->
+@section Script{
+   @* <script src="~/app-assets/vendors/sweetalert/sweetalert.min.js"></script>*@
+    <!-- BEGIN PAGE VENDOR JS-->
+    <script src="~/app-assets/vendors/jquery-validation/jquery.validate.min.js"></script>
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <script src="~/app-assets/js/scripts/form-validation.js"></script>
+    <script src="~/app-assets/vendors/jquery-validation/jquery.validate.min.js"></script>
+    <!-- END PAGE LEVEL JS-->
+    <script src="~/app-assets/js/scripts/form-validation.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $("#AddFeatures").click(function () {
+          
+            var txtDisable = $("#DisableName").val();
+            var txtVal = $("#ValName").val();
+            
+            if (txtDisable=='' || txtVal=='') {
+                Swal.fire('هشدار!', 'نام و مقدار را باید وارد کنید', 'warning');
+            }
+            else {
+                $('#FeaturesTable tbody').append('<tr> <td>' + txtDisable + '</td>  <td>' + txtVal + '</td> <td> <a  class="idFeatures btnDelete btn btn-danger"> حذف </a> </td> </tr>');
+                $("#DisableName").val("");
+                $("#ValName").val("");
+            }
+        });
+        $("#FeaturesTable").on('click', '.idFeatures', function () {
+           
+            $(this).closest('tr').remove();
+        });
+
+        $("#AddSize").click(function () {
+
+            var txtSize = $("#sizepro").val();
+           
+           
+            if (txtSize == "") {
+                Swal.fire('هشدار!', "سایز را باید وارد کنید", "warning");
+            }
+            else {
+                $('#SizaTable tbody').append('<tr> <td>' + txtSize + '</td> <td> <a  class="idSize btnDelete btn btn-danger"> حذف </a> </td> </tr>');
+                $("#sizepro").val("");
+               
+            }
+        });
+        $("#SizaTable").on('click', '.idSize', function () {
+          
+            $(this).closest('tr').remove();
+        });
+
+        $("#AddColor").click(function () {
+
+            var txtColor = $("#ColorPro").val();
+
+
+            if (txtColor == "") {
+                Swal.fire('هشدار!', "رنگ را باید وارد کنید", "warning");
+            }
+            else {
+                $('#ColorTable tbody').append('<tr> <td>' + txtColor + '</td> <td> <a  class="idColor btnDelete btn btn-danger"> حذف </a> </td> </tr>');
+                $("#ColorPro").val("");
+
+            }
+        });
+        $("#ColorTable").on('click', '.idColor', function () {
+
+            $(this).closest('tr').remove();
+        });
+
+        $("#btnAddProduct").click(function () {           
+            var data = new FormData();
+            data.append("NamePro", $("#Name").val());
+            data.append("Brand", $("#Berand").val());
+            data.append("Price", $("#Price").val());
+            data.append("Number", $("#Number").val());
+            data.append("Descript", $("#Description").val());
+            data.append("Categoryid", $('#Category').find('option:selected').val());
+            var productImages = document.getElementById("proImage");
+
+            if (productImages.files.length > 0) {
+                for (var i = 0; i < productImages.files.length; i++) {
+                    data.append('Images-' + i, productImages.files[i]);
+                }
+            }
+             
+            var dataFeatures = $('#FeaturesTable tr:gt(0)').map(function () {
+                return {
+                    DisplayName: $(this.cells[0]).text(),
+                    Value: $(this.cells[1]).text()
+                };
+            }).get();
+            $.each(dataFeatures, function (i, val) {
+                data.append('[' + i + '].DisplayName', val.DisplayName);
+                data.append('[' + i + '].Value', val.Value);
+            });
+            var dataColor = $('#ColorTable tr:gt(0)').map(function () {
+                return {
+                    Color: $(this.cells[0]).text(),
+                   
+                };
+            }).get();
+            $.each(dataColor, function (i, val) {
+                data.append('[' + i + '].Color', val.Color);
+               
+            });
+            var dataSize = $('#SizaTable tr:gt(0)').map(function () {
+                return {
+                    Size: $(this.cells[0]).text(),
+
+                };
+            }).get();
+            $.each(dataSize, function (i, val) {
+                data.append('[' + i + '].Size', val.Size);
+
+            });
+            $.ajax({
+                type: "POST",
+                url: "/Admin/Product/Addproduct",
+                contentType: false,
+                processData: false,
+                data: data,
+                success: function (data1) {
+
+                    $("#Berand").val() = "";
+                    $("#Price").val() = "";
+        $("#Number").val()="";
+                    $("#Description").val() = "";
+                    $("#proImage").val() = "";
+                }
+
+
+           
+
+            });
+
+        });
+
+
+
+    </script>
+}
+

@@ -1,0 +1,53 @@
+﻿@model BissnessEntity.PersonInfo
+
+@{
+    ViewData["Title"] = "GetUserInfo";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@section Sheets{
+
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css-rtl/pages/page-knowledge.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css/pages/advance-ui-media.min.css">
+
+}
+<div class="col s12 card-content-link">
+    <div class="card z-depth-0 card-border-gray pb-3">
+        <div class="card-content">
+            <div class="row">
+                <div class="col s12">
+                    <h5><i class="material-icons purple-text vertical-text-bottom"> grade </i>اطلاعات بیشتر در مورد کاربر </h5>
+                    <br />
+                    <br />
+                </div>
+                <div class="col s12 m6">
+                    <span class="primary text-bold-500"><a><i class="ft-home font-small-3"></i> نام</a></span>
+                    <span class="line-height-2 display-block overflow-hidden">@Model.Name</span>
+                    <br />
+                    <span class="primary text-bold-500"><a><i class="ft-briefcase font-small-3"></i> نام خانوادگی</a></span>
+                    <span class="line-height-2 display-block overflow-hidden"> @Model.Family</span>
+                    <br />
+                    <span class="primary text-bold-500"><a><i class="ft-home font-small-3"></i> تلفن همراه</a></span>
+                    <span class="line-height-2 display-block overflow-hidden">@Model.PhoneNumber</span>
+                    <br />
+                    <span class="primary text-bold-500"><a><i class="ft-home font-small-3"></i>کدپستی</a></span>
+                    <span class="line-height-2 display-block overflow-hidden"> @Model.Postalcode</span>
+                    <br />
+                </div>
+                <div class="col s12 m6">
+                    <span class="primary text-bold-500"><a><i class="ft-home font-small-3"></i>شهر</a></span>
+                    <span class="line-height-2 display-block overflow-hidden">@Model.City</span>
+                    <br />
+                    <span class="primary text-bold-500"><a><i class="ft-home font-small-3"></i>آدرس</a></span>
+                    <span class="line-height-2 display-block overflow-hidden">@Model.Address</span>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <script src="~/app-assets/js/scripts/advance-ui-modals.min.js"></script>
+    <script src="~/app-assets/js/scripts/eCommerce-products-page.min.js"></script>
+    <script src="~/app-assets/vendors/noUiSlider/nouislider.min.js"></script>
+    <script src="~/app-assets/js/scripts/advance-ui-media.min.js"></script>
+}

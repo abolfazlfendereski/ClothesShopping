@@ -1,0 +1,139 @@
+﻿@model  BissnessEntity.CartItemdto1
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- =========================== Breadcrumbs =================================== -->
+<div class="breadcrumbs_wrap dark">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="text-center">
+                    <h2 class="breadcrumbs_title">حساب کاربری</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#"><i class="ti-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#">حساب کاربری</a></li>
+                          
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- =========================== Breadcrumbs =================================== -->
+<!-- =========================== My Order =================================== -->
+<section class="gray">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-3">
+                <nav class="dashboard-nav mb-10 mb-md-0">
+                    <div class="list-group list-group-sm list-group-strong list-group-flush-x">
+                        <a class="list-group-item list-group-item-action dropright-toggle active" href="~/Settings">
+                            سفارشات من
+                        </a>
+                       
+                      
+                        <a class="list-group-item list-group-item-action dropright-toggle" href="~/Product/GetFavorite">
+                            مورد علاقه
+                        </a>
+                        <a class="list-group-item list-group-item-action dropright-toggle" href="~/Settings/Changeinfo">
+                            تنظیمات حساب
+                        </a>
+                        <a class="list-group-item list-group-item-action dropright-toggle " href="~/Settings/ChangePassword">
+                            تغییر رمز عبور
+                        </a>
+                        <a class="list-group-item list-group-item-action dropright-toggle" href="~/Account/Logout">
+                            خروج
+                        </a>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="col-lg-8 col-md-9">             
+
+                <!-- Order Items -->
+                <div class="card style-2 mb-4">
+                    <div class="card-header">
+                        <h4 class="mb-0">@Model.Products.Count() مورد سفارش</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="item-groups">
+
+                            <!-- Single Items -->
+
+
+
+                            
+                                @foreach (var item in Model.Products)
+                                {
+
+                                
+                            <li>
+                                <div class="row align-items-center">
+                                    <div class="col-4 col-md-3 col-xl-2">
+                                        <a href="~/Product/Detail?id=@item.ProductId"><img src="~/images/product/@item.Images" alt="..." class="img-fluid"></a>
+                                    </div>
+
+                                    <div class="col">
+                                        <!-- Title -->
+                                        <p class="mb-2 font-size-sm font-weight-bold">
+                                            <a class="text-body" href="~/Product/Detail?id=@item.ProductId">@item.Product</a> <br>
+                                            <span class="theme-cl">@item.Price.ToString("n0") تومان</span>
+                                        </p>
+
+                                        <!-- Text -->
+                                        <div class="font-size-sm text-muted">
+                                            <br>
+                                            تعداد:@item.Count
+                                            <br />
+                                            تاریخ خرید:@item.payDate
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                                }
+                           
+
+                               
+
+
+
+
+
+
+
+
+                            </ul>
+                    </div>
+                </div>
+
+                <!-- Total Items -->
+                <div class="card style-2 mb-4">
+                    <div class="card-header">
+                        <h4 class="mb-0">سفارش کل</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-sm list-group-flush-y list-group-flush-x">
+                            <li class="list-group-item d-flex">
+                                <span>جمع کل</span>
+                                <span class="mr-auto">@Model.Products.Sum(a=>a.Price * a.Count).ToString("n0") تومان</span>
+                            </li>                          
+
+                        </ul>
+                    </div>
+                </div>
+
+                
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- =========================== My Order =================================== -->

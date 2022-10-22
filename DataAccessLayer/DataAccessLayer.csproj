@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20220318160928_Addorderpersonalinfo.cs" />
+    <Compile Remove="Migrations\20220318160928_Addorderpersonalinfo.Designer.cs" />
+    <Compile Remove="Migrations\20220318161116_orderPersonelInfo.cs" />
+    <Compile Remove="Migrations\20220318161116_orderPersonelInfo.Designer.cs" />
+    <Compile Remove="Migrations\20220318161420_AddPersonelInfoReqAndOrder.cs" />
+    <Compile Remove="Migrations\20220318161420_AddPersonelInfoReqAndOrder.Designer.cs" />
+    <Compile Remove="Migrations\20220318162038_addPersonelInfo.cs" />
+    <Compile Remove="Migrations\20220318162038_addPersonelInfo.Designer.cs" />
+    <Compile Remove="Migrations\20220318162948_addinfo.cs" />
+    <Compile Remove="Migrations\20220318162948_addinfo.Designer.cs" />
+    <Compile Remove="Migrations\20220318163201_AddRequset.cs" />
+    <Compile Remove="Migrations\20220318163201_AddRequset.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BissnessEntity\BissnessEntity.csproj" />
+  </ItemGroup>
+
+</Project>

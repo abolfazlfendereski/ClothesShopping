@@ -1,0 +1,121 @@
+﻿@model BissnessEntity.PersonInfo
+
+@{
+    ViewData["Title"] = "PersonalInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- =========================== Breadcrumbs =================================== -->
+<div class="breadcrumbs_wrap gray">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="text-center">
+                    <h2 class="breadcrumbs_title">صفحه پرداخت</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#"><i class="ti-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#">فروشگاه</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">صفحه پرداخت</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- =========================== Breadcrumbs =================================== -->
+<!-- =========================== Billing Section =================================== -->
+<section>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-8 col-md-12">
+                <form id="info" asp-action="AddInfo" asp-controller="Order">
+
+                    <!-- Heading -->
+                    <h4 class="mb-5">جزئیات صورتحساب</h4>
+
+                    <!-- Billing details -->
+                    <div class="row mb-5">
+                        <div class="col-12 col-md-6">
+                            <!-- First Name -->
+                            <div class="form-group">
+                                <label for="checkoutBillingFirstName">نام *</label>
+                                <input asp-for="Name" class="form-control form-control-sm" id="checkoutBillingFirstName" type="text" placeholder="نام" required="">
+                                <span class="text-danger" asp-validation-for="Name"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <!-- Last Name -->
+                            <div class="form-group">
+                                <label for="checkoutBillingLastName">نام خانوادگی *</label>
+                                <input asp-for="Family" class="form-control form-control-sm" id="checkoutBillingLastName" type="text" placeholder="نام خانوادگی" required="">
+                                <span class="text-danger" asp-validation-for="Family"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12">
+                            <!-- Address Line 1 -->
+                            <div class="form-group">
+                                <label for="checkoutBillingAddress">آدرس  *</label>
+                                <input asp-for="Address" class="form-control form-control-sm" id="checkoutBillingAddress" type="text" placeholder="آدرس 1" required="">
+                                <span class="text-danger" asp-validation-for="Address"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 col-md-6">
+                            <!-- Town / City -->
+                            <div class="form-group">
+                                <label for="checkoutBillingTown">شهر </label>
+                                <input asp-for="City" class="form-control form-control-sm" id="checkoutBillingTown" type="text" placeholder="شهر" required="">
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <!-- ZIP / Postcode -->
+                            <div class="form-group">
+                                <label for="checkoutBillingZIP">کدپستی *</label>
+                                <input asp-for="Postalcode" class="form-control form-control-sm" id="checkoutBillingZIP" type="text" placeholder="کدپستی" required="">
+                                <span class="text-danger" asp-validation-for="Postalcode"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <!-- Mobile Phone -->
+                            <div class="form-group mb-0">
+                                <label for="checkoutBillingPhone">تلفن همراه *</label>
+                                <input asp-for="PhoneNumber" class="form-control form-control-sm" id="checkoutBillingPhone" type="tel" placeholder="تلفن همراه" required="">
+                                <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="col-12 col-md-12 col-lg-4">                
+                <input onclick="SubmitForm()" type="submit" class="btn btn-block btn-dark mb-2" value="ادامه به پرداخت" href="">
+               
+            </div>
+
+        </div>
+    </div>
+</section>
+@section Script{
+    <script>
+        function SubmitForm() {
+            $("#info").submit();
+        }
+    </script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}

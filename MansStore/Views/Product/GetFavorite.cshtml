@@ -1,0 +1,150 @@
+﻿@model BissnessEntity.ListFavorite
+
+@{
+    ViewData["Title"] = "GetFavorite";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- =========================== Breadcrumbs =================================== -->
+<div class="breadcrumbs_wrap dark">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="text-center">
+                    <h2 class="breadcrumbs_title">مورد علاقه</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#"><i class="ti-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#">حساب کاربری</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">مورد علاقه</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- =========================== Breadcrumbs =================================== -->
+<!-- =========================== My Wishlist =================================== -->
+<section class="gray">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-3">
+                <nav class="dashboard-nav mb-10 mb-md-0">
+                    <div class="list-group list-group-sm list-group-strong list-group-flush-x">
+                        <a class="list-group-item list-group-item-action dropright-toggle" href="~/Settings">
+                            سفارشات من
+                        </a>
+                       
+                        <a class="list-group-item list-group-item-action dropright-toggle active" href="~/Product/GetFavorite">
+                            مورد علاقه
+                        </a>
+                        <a class="list-group-item list-group-item-action dropright-toggle" href="~/settings/Changeinfo">
+                            تنظیمات حساب
+                        </a>
+                        <a class="list-group-item list-group-item-action dropright-toggle " href="~/Settings/ChangePassword">
+                            تغییر رمز عبور
+                        </a>
+                        <a class="list-group-item list-group-item-action dropright-toggle" href="~/Account/Logout">
+                            خروج
+                        </a>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="col-lg-8 col-md-9">
+                <div class="row">
+                    @foreach (var item in Model.Favorites)
+                    {
+
+                        <!-- Single Item -->
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="woo_product_grid no-hover">
+
+
+                                <div class="woo_product_thumb">
+                                    <img src="~/images/product/@item.Srcimg" class="img-fluid" alt="" />
+                                    
+                                </div>
+                                <div class="woo_product_caption center">
+                                    <div class="woo_rate">
+                                        @for (int i = 0; i <= item.Star; i++)
+                                        {
+                                            <i class="fa fa-star active"></i>
+                                        }
+                                        @for (int i = 0; i <= (5 - item.Star); i++)
+                                        {
+                                            <i class="fa fa-star filled"></i>
+                                        }
+                                    </div>
+                                    <div class="woo_title">
+                                        <h4 class="woo_pro_title"><a href="~/Product/Detail?Id=@item.ProductId"></a>@item.Title</h4>
+                                    </div>
+                                    <div class="woo_price">
+                                        <h6>@item.price.ToString("n0") تومان</h6>
+                                    </div>
+                                    <div class="woo_product_cart hover">
+                                        <ul>
+                                            <li><a href="/product/Detail?id=@item.ProductId" class="woo_cart_btn btn_cart"><i class="ti-eye"></i></a></li>
+                                            <li><a href="/Cart/AddCart?id=@item.ProductId" class="woo_cart_btn btn_view"><i class="ti-shopping-cart"></i></a></li>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item right">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true"><i class="ti-arrow-right ml-1"></i>قبلی</span>
+                                    </a>
+                                </li>
+                                @*@{
+                                    BissenessLagicLayer.BlProductUs bll = new BissenessLagicLayer.BlProductUs();
+                                    int f = bll.gettoall();
+                                    int count;
+                                    if (f % 10 == 0) count = f / 10;
+                                    else count = (f / 10) + 1;
+                                    var a = 0;
+                                    for (int i = 0; i < count; i++)
+                                    {
+                                        if (i == 0 || i == 1)
+                                        {
+                                            a = 1;
+                                        }
+                                        else
+                                        {
+                                            a = i;
+                                        }
+
+                                        <li hidden><input type="text" id="numpage" value="@i" /></li>
+                                        <li id="lipage" class="page-item "><a class="page-link"  href="/product/getfa?c=@i">@a</a></li>
+                                    }
+
+                                }*@
+                                <li class="page-item left">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true"><i class="ti-arrow-left ml-1"></i>بعدی</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- =========================== My Wishlist =================================== -->

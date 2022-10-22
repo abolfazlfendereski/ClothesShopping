@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model BissnessEntity.ProductDetailForAdmindto
+@section Sheets{
+
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css-rtl/pages/page-knowledge.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css/pages/advance-ui-media.min.css">
+
+}
+<div class="col s12 card-content-link">
+    <div class="card z-depth-0 card-border-gray pb-3">
+        <div class="card-content">
+            <div class="row">
+                <div class="col s12">
+                    <h5><i class="material-icons purple-text vertical-text-bottom"> grade </i>اطلاعات بیشتر در مورد محصول </h5>
+                    <br />
+                    <br />
+                </div>
+                <div class="col s12 m6">
+                    <span class="primary text-bold-500"><a><i class="ft-home font-small-3"></i>  محصول</a></span>
+                    <span class="line-height-2 display-block overflow-hidden">@Model.Name</span>
+                    <br />
+                    <span class="primary text-bold-500"><a><i class="ft-briefcase font-small-3"></i> برند</a></span>
+                    <span class="line-height-2 display-block overflow-hidden"> @Model.Brand</span>
+                    <br />
+                    <span class="primary text-bold-500"><a><i class="ft-home font-small-3"></i> دسته بندی</a></span>
+                    <span class="line-height-2 display-block overflow-hidden">@Model.Category</span>
+                    <br />
+                    <span class="primary text-bold-500"><a><i class="ft-home font-small-3"></i>قیمت</a></span>
+                    <span class="line-height-2 display-block overflow-hidden"> @Model.Price.ToString("n0")</span>
+                    <br />
+                </div>
+                <div class="col s12 m6">
+                    <span class="primary text-bold-500"><a><i class="ft-home font-small-3"></i>موجودی</a></span>
+                    <span class="line-height-2 display-block overflow-hidden">@Model.Number</span>
+                    <br />
+                    <span class="primary text-bold-500"><a><i class="ft-home font-small-3"></i>توضیحات</a></span>
+                    <span class="line-height-2 display-block overflow-hidden">@Model.Description</span>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12">
+        <div id="captions" class="card card-tabs">
+            <div class="card-content">
+                <div class="card-title">
+                    <div class="row">
+                        <div class="col s12 m6 l10">
+                            <h4 class="card-title">تصاویر و ویژگی های محصول</h4>
+                        </div>
+                        
+                    </div>
+                    <div id="view-captions" class="active">
+                        <div class="row">
+                            <div class="col s12 m6 display-flex justify-content-between">
+                                @foreach (var item in Model.Features)
+                                {
+                                    <span class="text-bold-500 primary"><a> @item.DisplayName :</a></span>
+                                    <span class="display-block overflow-hidden"> @item.Value</span>
+                                   <br>
+                                   <br>
+                                   <br>
+                                   <br> 
+                                   <br> 
+                                }
+                            </div>
+                                @foreach (var item in Model.Images)
+                                {
+                            <div class="col s12 mt-2">
+
+                                    <div class="material-placeholder" style=""><img class="materialboxed" src="~/images/product/@item.Src" alt="sample" data-caption="" width="250"></div>
+                            </div>
+                                    }
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script{
+    <script src="~/app-assets/js/scripts/advance-ui-modals.min.js"></script>
+    <script src="~/app-assets/js/scripts/eCommerce-products-page.min.js"></script>
+    <script src="~/app-assets/vendors/noUiSlider/nouislider.min.js"></script>
+    <script src="~/app-assets/js/scripts/advance-ui-media.min.js"></script>
+}

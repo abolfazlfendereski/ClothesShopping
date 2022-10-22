@@ -1,0 +1,136 @@
+﻿@model BissnessEntity.PersonInfo
+
+@{
+    ViewData["Title"] = "Changeinfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- =========================== Breadcrumbs =================================== -->
+<div class="breadcrumbs_wrap dark">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="text-center">
+                    <h2 class="breadcrumbs_title">تنظیمات حساب</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#"><i class="ti-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#">حساب کاربری</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">تنظیمات حساب</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- =========================== Breadcrumbs =================================== -->
+<!-- =========================== Account Settings =================================== -->
+<section class="gray">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-3">
+                <nav class="dashboard-nav mb-10 mb-md-0">
+                    <div class="list-group list-group-sm list-group-strong list-group-flush-x">
+                        <a class="list-group-item list-group-item-action dropright-toggle" href="~/Settings">
+                            سفارشات من
+                        </a>
+                       
+                        <a class="list-group-item list-group-item-action dropright-toggle" href="~/Product/GetFavorite">
+                            مورد علاقه
+                        </a>
+                        <a class="list-group-item list-group-item-action dropright-toggle active" href="~/settings/Changeinfo">
+                            تنظیمات حساب
+                        </a>
+                        <a class="list-group-item list-group-item-action dropright-toggle " href="~/Settings/ChangePassword">
+                            تغییر رمز عبور
+                        </a>
+                        <a class="list-group-item list-group-item-action dropright-toggle" href="~/Account/Logout">
+                            خروج
+                        </a>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="col-lg-8 col-md-9">
+                <!-- Total Items -->
+                <div class="card style-2">
+                    <div class="card-header">
+                        <h4 class="mb-0">جزئیات حساب</h4>
+                    </div>
+                    <div class="card-body">
+                        <form class="submit-page" asp-action="UpdateInfo" asp-controller="Settings" method="post">
+                            <div class="row">
+
+                                <div class="col-12 col-md-6">
+                                    <!-- Email -->
+                                    <div class="form-group">
+                                        <label>نام *</label>
+                                        <input class="form-control" type="text" placeholder="نام *" asp-for="Name" value="@Model.Name" required="">
+                                        <span class="text-danger" asp-validation-for="Name"></span>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12 col-md-6">
+                                    <!-- Last Name -->
+                                    <div class="form-group">
+                                        <label>نام خانوادگی *</label>
+                                        <input class="form-control" type="text" placeholder="نام خانوادگی *" asp-for="Family" value="@Model.Family" required="">
+                                        <span class="text-danger" asp-validation-for="Family"></span>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12">
+                                    <!-- Email -->
+                                    <div class="form-group">
+                                        <label> آدرس  *</label>
+                                        <input class="form-control" type="text" placeholder="آدرس  *" asp-for="Address" value="@Model.Address" required="">
+                                        <span class="text-danger" asp-validation-for="Address"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <!-- Email -->
+                                    <div class="form-group">
+                                        <label>  شماره تلفن همراه  *</label>
+                                        <input class="form-control" type="text" placeholder="شماره تلفن همراه  *" asp-for="PhoneNumber" value="@Model.PhoneNumber" required="">
+                                        <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <!-- Email -->
+                                    <div class="form-group">
+                                        <label> کدپستی  *</label>
+                                        <input class="form-control" type="text" placeholder="کدپستی  *" asp-for="Postalcode" value="@Model.Postalcode" required="">
+                                        <span class="text-danger" asp-validation-for="Postalcode"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <!-- Email -->
+                                    <div class="form-group">
+                                        <label> شهر  *</label>
+                                        <input class="form-control" type="text" placeholder="شهر  *" asp-for="City" value="@Model.City" required="">
+                                        <span class="text-danger" asp-validation-for="City"></span>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <button class="btn btn-dark" type="submit">ذخیره تغییرات</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- =========================== Account Settings =================================== -->
