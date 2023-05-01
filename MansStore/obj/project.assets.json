@@ -9088,11 +9088,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Project\\web\\MansStore\\MansStore\\MansStore.csproj",
+      "projectUniqueName": "E:\\WebProject\\MansStore\\MansStore\\MansStore.csproj",
       "projectName": "MansStore",
-      "projectPath": "F:\\Project\\web\\MansStore\\MansStore\\MansStore.csproj",
+      "projectPath": "E:\\WebProject\\MansStore\\MansStore\\MansStore.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "F:\\Project\\web\\MansStore\\MansStore\\obj\\",
+      "outputPath": "E:\\WebProject\\MansStore\\MansStore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 21.1\\Components\\Offline Packages",
@@ -9116,11 +9116,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "F:\\Project\\web\\MansStore\\BissenessLagicLayer\\BissenessLagicLayer.csproj": {
-              "projectPath": "F:\\Project\\web\\MansStore\\BissenessLagicLayer\\BissenessLagicLayer.csproj"
+            "E:\\WebProject\\MansStore\\BissenessLagicLayer\\BissenessLagicLayer.csproj": {
+              "projectPath": "E:\\WebProject\\MansStore\\BissenessLagicLayer\\BissenessLagicLayer.csproj"
             },
-            "F:\\Project\\web\\MansStore\\BissnessEntity\\BissnessEntity.csproj": {
-              "projectPath": "F:\\Project\\web\\MansStore\\BissnessEntity\\BissnessEntity.csproj"
+            "E:\\WebProject\\MansStore\\BissnessEntity\\BissnessEntity.csproj": {
+              "projectPath": "E:\\WebProject\\MansStore\\BissnessEntity\\BissnessEntity.csproj"
             }
           }
         }
@@ -9194,7 +9194,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
       }
     }
   }

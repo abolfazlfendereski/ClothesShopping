@@ -25,3 +25,13 @@ F:\Project\web\MansStore\BissnessEntity\bin\Debug\netcoreapp3.1\BissnessEntity.d
 F:\Project\web\MansStore\BissnessEntity\bin\Debug\netcoreapp3.1\BissnessEntity.pdb
 F:\Project\web\MansStore\BissnessEntity\obj\Debug\netcoreapp3.1\BissnessEntity.dll
 F:\Project\web\MansStore\BissnessEntity\obj\Debug\netcoreapp3.1\BissnessEntity.pdb
+E:\WebProject\MansStore\BissnessEntity\bin\Debug\netcoreapp3.1\BissnessEntity.deps.json
+E:\WebProject\MansStore\BissnessEntity\bin\Debug\netcoreapp3.1\BissnessEntity.dll
+E:\WebProject\MansStore\BissnessEntity\bin\Debug\netcoreapp3.1\BissnessEntity.pdb
+E:\WebProject\MansStore\BissnessEntity\obj\Debug\netcoreapp3.1\BissnessEntity.csproj.AssemblyReference.cache
+E:\WebProject\MansStore\BissnessEntity\obj\Debug\netcoreapp3.1\BissnessEntity.GeneratedMSBuildEditorConfig.editorconfig
+E:\WebProject\MansStore\BissnessEntity\obj\Debug\netcoreapp3.1\BissnessEntity.AssemblyInfoInputs.cache
+E:\WebProject\MansStore\BissnessEntity\obj\Debug\netcoreapp3.1\BissnessEntity.AssemblyInfo.cs
+E:\WebProject\MansStore\BissnessEntity\obj\Debug\netcoreapp3.1\BissnessEntity.csproj.CoreCompileInputs.cache
+E:\WebProject\MansStore\BissnessEntity\obj\Debug\netcoreapp3.1\BissnessEntity.dll
+E:\WebProject\MansStore\BissnessEntity\obj\Debug\netcoreapp3.1\BissnessEntity.pdb

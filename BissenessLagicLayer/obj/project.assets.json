@@ -5336,11 +5336,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Project\\web\\MansStore\\BissenessLagicLayer\\BissenessLagicLayer.csproj",
+      "projectUniqueName": "E:\\WebProject\\MansStore\\BissenessLagicLayer\\BissenessLagicLayer.csproj",
       "projectName": "BissenessLagicLayer",
-      "projectPath": "F:\\Project\\web\\MansStore\\BissenessLagicLayer\\BissenessLagicLayer.csproj",
+      "projectPath": "E:\\WebProject\\MansStore\\BissenessLagicLayer\\BissenessLagicLayer.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "F:\\Project\\web\\MansStore\\BissenessLagicLayer\\obj\\",
+      "outputPath": "E:\\WebProject\\MansStore\\BissenessLagicLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 21.1\\Components\\Offline Packages",
@@ -5364,11 +5364,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "F:\\Project\\web\\MansStore\\BissnessEntity\\BissnessEntity.csproj": {
-              "projectPath": "F:\\Project\\web\\MansStore\\BissnessEntity\\BissnessEntity.csproj"
+            "E:\\WebProject\\MansStore\\BissnessEntity\\BissnessEntity.csproj": {
+              "projectPath": "E:\\WebProject\\MansStore\\BissnessEntity\\BissnessEntity.csproj"
             },
-            "F:\\Project\\web\\MansStore\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "F:\\Project\\web\\MansStore\\DataAccessLayer\\DataAccessLayer.csproj"
+            "E:\\WebProject\\MansStore\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "E:\\WebProject\\MansStore\\DataAccessLayer\\DataAccessLayer.csproj"
             }
           }
         }
@@ -5397,7 +5397,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
       }
     }
   }

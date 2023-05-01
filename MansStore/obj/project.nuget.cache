@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FW4/7Cl3vC/uzYX4pkUHfB29cy3SWTejsUZtHMGa/yoUfxS47ztripd7EY/ySmEGqw/98+kdPYgHe8Z7tc9Kfw==",
+  "dgSpecHash": "oOaQ/fLpLRjE7bCpXabx8Dl5FPbnq2Ip/r69UW2jbnDhSVAgf+jDeBhNHFl4qNHbE19HteTeq1fo/4JesqeJzg==",
   "success": true,
-  "projectFilePath": "F:\\Project\\web\\MansStore\\MansStore\\MansStore.csproj",
+  "projectFilePath": "E:\\WebProject\\MansStore\\MansStore\\MansStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\currietechnologies.razor.sweetalert2\\5.1.0\\currietechnologies.razor.sweetalert2.5.1.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.0\\microsoft.aspnetcore.authorization.3.1.0.nupkg.sha512",

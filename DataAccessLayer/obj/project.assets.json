@@ -5388,11 +5388,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Project\\web\\MansStore\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectUniqueName": "E:\\WebProject\\MansStore\\DataAccessLayer\\DataAccessLayer.csproj",
       "projectName": "DataAccessLayer",
-      "projectPath": "F:\\Project\\web\\MansStore\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectPath": "E:\\WebProject\\MansStore\\DataAccessLayer\\DataAccessLayer.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "F:\\Project\\web\\MansStore\\DataAccessLayer\\obj\\",
+      "outputPath": "E:\\WebProject\\MansStore\\DataAccessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 21.1\\Components\\Offline Packages",
@@ -5416,8 +5416,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "F:\\Project\\web\\MansStore\\BissnessEntity\\BissnessEntity.csproj": {
-              "projectPath": "F:\\Project\\web\\MansStore\\BissnessEntity\\BissnessEntity.csproj"
+            "E:\\WebProject\\MansStore\\BissnessEntity\\BissnessEntity.csproj": {
+              "projectPath": "E:\\WebProject\\MansStore\\BissnessEntity\\BissnessEntity.csproj"
             }
           }
         }
@@ -5484,7 +5484,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
       }
     }
   }
